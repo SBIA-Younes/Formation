@@ -2,6 +2,20 @@ from django import forms
 from .models import Book, Category
 
 
+class CategoryForm(forms.ModelForm):
+    """Form definition for Category."""
+
+    class Meta:
+        """Meta definition for Categoryform."""
+
+        model = Category
+        fields = ('name',)
+        
+        widgets = {
+            "name" : forms.TextInput(attrs={"class":"form-control"})
+            }
+
+
 class BookForm(forms.ModelForm):
     """Form definition for Book."""
 
