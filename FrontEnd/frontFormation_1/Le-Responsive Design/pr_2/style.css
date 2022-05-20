@@ -1,0 +1,67 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-size: 40px;
+    color: crimson;
+}
+
+/* @media (min-width: 800px) {
+    
+    h1 {
+        font-size: 30px;
+        color: lightslategrey;
+    }
+
+} */
+
+/* @media print {
+    
+    h1 {
+        font-size: 30px;
+        color: lightslategrey;
+    }
+
+} */
+/* 
+@media screen {
+    
+    h1 {
+        font-size: 30px;
+        color: lightslategrey;
+    }
+
+} */
+
+/* @media speech {
+    
+    h1 {
+        font-size: 30px;
+        color: lightslategrey;
+    }
+    .bubble {
+        display: block;
+    }
+
+} */
+
+/* entre 500px et 800px 
+@media (max-width: 800px) and (min-width: 500px) {
+    
+    h1 {
+        font-size: 30px;
+        color: lightslategrey;
+    }
+
+} */
+
+@media (max-width: 800px) {
+    
+    h1 {
+        font-size: 30px;
+        color: lightslategrey;
+    }
+
+}
