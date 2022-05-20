@@ -1,67 +1,63 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    height: 100vh;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 *, ::before, ::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-h1 {
-    font-size: 40px;
-    color: crimson;
+nav {
+    height: 70px;
+    width: 100%;
+    background-color: #333;
 }
-
-/* @media (min-width: 800px) {
-    
-    h1 {
-        font-size: 30px;
-        color: lightslategrey;
+.liste-nav {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.item-nav {
+    display: inline-block;
+    line-height: 70px;
+    font-size: 25px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+.item-nav a {
+    text-decoration: none;
+    color: #f1f1f1;
+}
+.btn-toggle-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    display: none;
+}
+.btn-toggle-container img {
+    width: 40px;
+}
+@media screen and (max-width:640px) {
+    .btn-toggle-container { display:inline}
+    nav {
+        border-bottom: 1px solid #f1f1f1;
     }
-
-} */
-
-/* @media print {
-    
-    h1 {
-        font-size: 30px;
-        color: lightslategrey;
+    .liste-nav {
+        position: relative;
+        top: 70px;
+        display: none;
     }
-
-} */
-/* 
-@media screen {
-    
-    h1 {
-        font-size: 30px;
-        color: lightslategrey;
+    .item-nav {
+        display: block;
+        background: #333;
+        margin: 0;
     }
-
-} */
-
-/* @media speech {
-    
-    h1 {
-        font-size: 30px;
-        color: lightslategrey;
-    }
-    .bubble {
+    .liste-nav.active-menu {
         display: block;
     }
-
-} */
-
-/* entre 500px et 800px 
-@media (max-width: 800px) and (min-width: 500px) {
-    
-    h1 {
-        font-size: 30px;
-        color: lightslategrey;
-    }
-
-} */
-
-@media (max-width: 800px) {
-    
-    h1 {
-        font-size: 30px;
-        color: lightslategrey;
-    }
-
 }
