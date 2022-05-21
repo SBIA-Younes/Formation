@@ -24,7 +24,7 @@ body {
     /* flex-shrink: 0; */
     /* flex-grow: 0; */
     /* flex: 1 1 150px; */
-    /* grow shrink basis=widdth */
+    /* grow shrink basis=width */
 }
 .item:nth-child(1) {
     background-color: lightblue;
