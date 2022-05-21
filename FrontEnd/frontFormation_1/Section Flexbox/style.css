@@ -9,23 +9,35 @@ body {
 }
 .container {
     width: 800px;
-    height: 300px;
+    height: 400px;
     background-color: midnightblue;
     display: flex;
-    justify-content: center;
-    align-items:center;
+    /* justify-content: center;
+    align-items:center; */
 }
 
 .item {
     height: 150px;
     width: 150px;
+    background-color: gold;
+    margin: 5px;
+    /* flex-shrink: 0; */
+    /* flex-grow: 0; */
+    /* flex: 1 1 150px; */
+    /* grow shrink basis=widdth */
 }
 .item:nth-child(1) {
     background-color: lightblue;
+    /* flex-shrink: 1; */
+    align-self: center;
 }
 .item:nth-child(2) {
     background-color: lightgreen;
+    /* flex-shrink: 2; */
 }
 .item:nth-child(3) {
     background-color: salmon;
+    /* flex-shrink: 1; */
+    align-self: flex-end;
+    margin-left: auto;
 }
