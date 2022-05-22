@@ -14,8 +14,10 @@ body {
     display: flex;
     /* justify-content: center;
     align-items:center; */
-    flex-wrap: wrap;
-    align-content: center;
+    /* flex-wrap: wrap; */
+    /* align-content: center; */
+    /* flex-direction: column; */
+    flex-flow: wrap column;
 }
 
 .item {
