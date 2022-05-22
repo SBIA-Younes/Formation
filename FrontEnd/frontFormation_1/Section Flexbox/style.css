@@ -9,12 +9,13 @@ body {
 }
 .container {
     width: 800px;
-    height: 400px;
+    height: 700px;
     background-color: midnightblue;
     display: flex;
     /* justify-content: center;
     align-items:center; */
     flex-wrap: wrap;
+    align-content: center;
 }
 
 .item {
