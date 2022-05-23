@@ -1,0 +1,67 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Exemple #1 */
+
+.containerA {
+    width: 800px;
+    height: 500px;
+    margin: 150px 0;
+    background: midnightblue;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+.itemA {
+    width: 150px;
+    height: 150px;
+    background: crimson;
+    margin: 5px;
+}
+
+.itemA:nth-child(2) {
+    flex: auto;
+    /* background-color: white; */
+}
+
+
+.containerB {
+    width: 800px;
+    height: 500px;
+    margin: 150px 0;
+    background: midnightblue;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-evenly;
+    /* flex-direction: column; */
+    /* flex-flow: wrap column; */
+    align-content: stretch;
+    
+}
+.itemB {
+    width: 150px;
+    height: 150px;
+    background: crimson;
+    margin: 5px;
+}
+
+.itemB:nth-child(3) {
+    /* order: 0; */
+    flex: 500px auto;
+    align-self: center;
+    background-color:white;
+}
+
