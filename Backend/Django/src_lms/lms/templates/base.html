@@ -44,9 +44,7 @@
 
     <!-- REQUIRED SCRIPTS -->
 
-    <script> 
-    $("#catinput").hide()
-    </script>
+
 
     <script src="{% static 'plugins/jquery_datepacker/jquery_ui.js' %}"></script>
 
@@ -63,6 +61,15 @@
     <script src="{% static 'dist/js/demo.js' %}"></script>
     <!--<script src="dist/js/pages/dashboard3.js'"></script>
 -->
+<script> 
+    $("#catinput").hide()
+    $("#addcat").click(function(){
+        $("#catinput").show()
+    });
+    $("#backcat").click(function(){
+        $("#catinput").hide()
+    });
+    </script>
     <script>
         $(document).ready(function () {
         $("#myModal").on("shown.bs.modal", function () {
