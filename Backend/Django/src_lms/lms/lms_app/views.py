@@ -31,3 +31,10 @@ def books(request):
         "formCat" : CategoryForm,
     }
     return render(request, 'pages/books.html',context=context)
+
+def update(request, id):
+    book_id = Book.objects.get(id=id)
+    if request.method == 'POST':
+        book_save = BookForm(request.POST, request.FILES, instance=book_id)
+        if book_save.is_valid():
+            book_save.save()
