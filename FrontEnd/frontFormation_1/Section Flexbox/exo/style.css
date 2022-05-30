@@ -33,10 +33,10 @@ body {
 }
 
 .itemA:nth-child(2) {
-    flex: auto;
-    /* background-color: white; */
+    flex-grow: 1;
 }
 
+/* Exemple #2 */
 
 .containerB {
     width: 800px;
@@ -45,23 +45,69 @@ body {
     background: midnightblue;
     flex-shrink: 0;
     display: flex;
-    justify-content: space-evenly;
-    /* flex-direction: column; */
-    /* flex-flow: wrap column; */
-    align-content: stretch;
-    
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
+
 .itemB {
-    width: 150px;
+    width: 380px;
     height: 150px;
     background: crimson;
     margin: 5px;
 }
 
 .itemB:nth-child(3) {
-    /* order: 0; */
-    flex: 500px auto;
-    align-self: center;
-    background-color:white;
+    width: 100%;
 }
 
+
+/* Exemple #3 */
+
+.containerC {
+    width: 800px;
+    height: 500px;
+    margin: 150px 0;
+    background: midnightblue;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemC{
+    width: 400px;
+    height: 60px;
+    background:crimson;
+    margin: 5px;
+}
+
+
+/* Exemple #4 */
+
+.containerD {
+    width: 800px;
+    height: 800px;
+    margin: 150px 0;
+    background: midnightblue;
+    flex-shrink: 0;
+    display: flex;
+    /* flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+.itemD{
+    width: 250px;
+    height: 250px;
+    background:crimson;
+    margin: 5px;
+}
+.d2 {
+    margin:auto;
+}
+.d3 {
+    margin-left: auto;
+    align-self: flex-end;
+}
