@@ -16,10 +16,12 @@ body {
     /* height: 1000px; */
 
     display: grid;
-    grid-template-rows: [header-start]150px[header-end contenu-start] 150px [contenu-end];
-    grid-template-columns: repeat(3, [col-start] 150px [col-end]);
+    grid-template-rows: repeat(2, 150px)  ;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     
+    grid-auto-rows: 150px;
     grid-gap: 30px;
+    width: 90%;
 }
 
 .item {
@@ -43,17 +45,14 @@ background-color: yellowgreen;
 
 .item4 {
 background-color: crimson;
-grid-column: col-start 3 / col-end 3;
 }
 
 .item5 {
 background-color: goldenrod;
-grid-row: contenu-start / contenu-end;
 }
 
 .item6 {
 background-color: indianred;
-/* grid-row: header-start / header-end; */
 }
 
 
