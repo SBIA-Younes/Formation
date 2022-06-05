@@ -38,3 +38,9 @@ def update(request, id):
         book_save = BookForm(request.POST, request.FILES, instance=book_id)
         if book_save.is_valid():
             book_save.save()
+    else:
+        book_save = BookForm(instance=book_id)
+    context = {
+        "from":book_save,
+        }
+    return render(request, "pages/update.html", context)
