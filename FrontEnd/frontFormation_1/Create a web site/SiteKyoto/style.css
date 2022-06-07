@@ -7,7 +7,7 @@ body {
     font-family: Nunito sans, sans-serif;
 }
 
-/* Navigation */
+/*--------- Navigation ---------*/
 
 nav {
     position: fixed;
@@ -75,5 +75,112 @@ nav {
         height: 70px;
         justify-content: center;
     }
+}
 
+/*--------- Accueil ---------*/
+
+.accueil {
+    width: 100%;
+    height: 100vh;
+    min-height: 970px;
+    background-image: url(ressources/accueil-pic-lum-down.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px dotted #777;
+    padding-top: 1px;
+}
+.logo-Kyoto {
+    border-radius: 50%;
+    width: 180px;
+    display: block;
+    margin: 179px auto 0;
+}
+.accueil h1 {
+    text-align: center;
+    font-size: 100px;
+    text-shadow: 0 0 10px #000;
+    color: #f1f1f1;
+    margin-top: 10px;
+    font-family: Merienda one, sans-serif;
+}
+.sous-titre {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #f1f1f1;
+    margin: 5px 0;
+    text-shadow: 0 0 10px #000;
+}
+
+.btn-accueil {
+    border-radius: 9999px;
+    background: crimson;
+    border: 1px solid #333;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 22px;
+    display: block;
+    width: 200px;
+    height: 70px;
+    line-height: 70px;
+    text-decoration: none;
+    margin: 30px auto 0;
+    transition:all 0.2s ease-in-out;
+}
+.btn-accueil:hover {
+    background: rgb(177, 0,36);
+    color: #fff;
+}
+
+
+@media screen and (max-width:850px) {
+    
+    .accueil {
+        height: 650px;
+        min-height:auto;
+        background-position: right;
+    }
+    .logo-Kyoto {
+        margin: 120px auto 0;
+    }
+    .accueil h1 {
+        font-size: 60px;
+    }
+    .sous-titre {
+        font-size: 23px;
+    }
+    .btn-accueil {
+        width: 150px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 18px;
+        margin: 15px auto 0;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .accueil {
+        height: 550px;
+    }
+    .logo-Kyoto {
+        width: 150px;
+        margin: 110px auto 0;
+    }
+    .accueil h1 {
+        font-size: 35px;
+    }
+    .sous-titre {
+        font-size: 20px;
+    }
+    .btn-accueil {
+        width: 130px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 16px;
+    }
+    .logo-menu {
+        top: 15px;
+        width: 40px;
+    }
 }
