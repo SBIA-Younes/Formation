@@ -184,3 +184,11 @@ nav {
         width: 40px;
     }
 }
+
+/*--------- Section Asymétrique ---------*/
+
+.section-asymerique {
+    display: grid;
+    grid-template: 200px repeat(3, auto) / 1fr 600px 1fr;
+    background: #f1f1f1;
+}
