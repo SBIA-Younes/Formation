@@ -187,8 +187,13 @@ nav {
 
 /*--------- Section Asymétrique ---------*/
 
-.section-asymerique {
+.section-asymetrique {
     display: grid;
     grid-template: 200px repeat(3, auto) / 1fr 600px 1fr;
     background: #f1f1f1;
 }
+/* 
+.section-asymetrique h2 {
+    grid-area: 1/1/2/-1;
+    background: #000;
+} */
