@@ -1,263 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap');
-*, ::before, ::after {
-    box-sizing: border-box;
+@font-face {
+    font-family: Montserrat;
+    src: url(./assets/font/Montserrat-VariableFont_wght.ttf);
+}
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+    list-style: none;
+}
+button {
+    background: none;
+    outline: none;
+    border: 1px solid whitesmoke;
+    /* color: white; */
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+button:hover {
+    color: black;
+    background: whitesmoke;
+}
+a {
+    text-decoration: none;
 }
 body {
-    font-family: Montserrat,"Helvetica Neue",sans-serif;
-    font-style: 500;
-    
+    margin: 0 auto;
+    text-align: center;
 }
-
-/* --- Navigation --- */
-
-/* nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+nav {
+    min-width: 1100px;
+    margin: 0 auto;
+}
 nav ul {
-    /* background: rgb(164, 148, 148); */
-    width: 100%;
-    height: 70px;
-    list-style-type: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
-nav li a {
-    /* margin: 0 5px; */
-    height: 70px;
-    font-weight: 700;
-    line-height: 70px;
+nav li {
     text-transform: uppercase;
-    text-decoration: none;
-    font-size: 14px;
-    color: rgb(0, 0, 0);
-}
-nav li a::before {
-    content: "";
-    display: block;
-    margin: 0 auto;
-    width: 0%;
-    height: 10px;
-    background: #6004ab;
-}
-nav ul a:hover::before, a:focus{
-    width: 100%;
-}
-#language {
-    background: rgb(153, 91, 91);
-    border-radius: 999px;
-    padding:  0 5px;
-    width: 100px;
-    height: 45px;
-    line-height: 45px;
-    text-align: center;
-}
-
-/* --- header --- */
-
-.main-header {
-    background: url(./assets/img/bg.jpg);
-    background-position: center 65%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    width: 100%;
-    height: 540px;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly; */
-    display: grid;
-    grid-template-columns: 80%;
-    grid-template-rows: 60% 10% 10%;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-    gap: 2%;
-}
-.main-header h1 {
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 25px;
-}
-.main-header button {
-    background-color: transparent;
-    color: #fff;
-    width: auto;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    border:1px solid #fff;
-    word-spacing: 4px;
-    text-transform: uppercase;
-}
-.fas {
-    padding-left: 10px;
-}
-
-/* --- header text --- */
-
-.header-text {
-    /* background: rgb(199, 182, 182); */
+    font-weight: 900;
+    font-size: 0.9rem;
+    cursor: pointer;
     position: relative;
-    width: 100%;
-    height: 100px;
-    text-align: center;
+    transition: 0.3s ease;
+    padding: 20px 0;
 }
-.header-text p {
-    font-size: 1rem;
+nav li:first-child {
+    color: indigo;
+}
+nav li:first-child:before {
+    content: "";
+    width: 100%;
+    height: 5px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background: indigo;
+    transform: translateY(-20px)
 }
-
-/* --- icons --- */
-
-.icon-part {
-    color: #fff;
-    background: #000;
-    height: auto;
+nav li:hover:before {
+        content: "";
     width: 100%;
-    
-}
-.icon-part-container { 
-
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-}
-
-.list-icon-part {
-    margin: 40px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: auto;
-    
-}
-.list-icon-part h3, .list-icon-part p {
-    padding: 10px;
-}
-
-.list-icon-part button {
-    background-color: transparent;
-    color:#fff;
-    border: 1px solid #fff;
-    padding: 10px 20px;
-    text-transform: uppercase;
-}
-
-/* --- news part ---*/
-
-.news-part {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    /* width: 100%; */
-    /* margin:  0 5%; */
-    background: #f7f7ff;
-    width: 100%;
-}
-
-.header-news {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 65% 35%;
-    align-items: center;
-    justify-items: start;
-    padding: 20px 20px;
-    /* margin: 20px; */
-}
-.left-part, .right-part {
-    padding-left: 10%;
-}
-.left-part h2{
-    font-weight: 400;
-    width: 400;
-    text-transform: uppercase;
-}
-
-.left-part p {
-    padding-top: 10px;
-    font-weight: 700;
-}
-
-.right-part button {
-    background: transparent;
-    border-style: 0.5px solid;
-    padding: 10px 20px;
-    text-transform: uppercase;
-}
-.main-news-container {
-    display: flex;
-    justify-content: center;
-    height: auto;
-    width: 100%;
-
-}
-
-
-.block-news {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 500px;
-    width: 256px;
-    padding-right: 10px;
-    margin: 20px auto;
-}
-.block-news .mn-pic img {
-    padding-bottom: 10px;
-    filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.433));
-    border-radius: 5px;
-}
-.block-news p {
-    font-size: 14px;
-    font-style: 500;
-    padding: 0 auto; 
-}
-.block-news .link a{
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.contact-container {
-    display: flex;
-    flex-direction:column;
-}
-
-.contact-list {
-    display: flex;
-    margin: 0 auto;
-    width: 90%;
-    align-items: flex-start;
-    font-size: 20px;
-    padding: 50px 0px 100px;
-}
-.list {
-    margin:0 30px;
-    width: 25%;
-    width: 25%;
-    
-}
-.list h5 {
-    padding-bottom: 20px;
-    text-transform: uppercase;
-}
-.infos-p{
-    list-style-type : none;
-    
-}
-.list a{
-    text-decoration:none;
-    
+    height: 5px;
+    position: absolute;
+    background: indigo;
+    transform: translateY(-20px)
 }
