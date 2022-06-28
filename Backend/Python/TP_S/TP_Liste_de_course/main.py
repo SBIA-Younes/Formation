@@ -44,8 +44,8 @@ def liste_de_course():
                     print(f"L'élément {element_retire} n'a pas étais retirer de la liste.")
                     
             elif choix == "3":
-                for i, element in enumerate(list_cours):
-                    print( i+1,element)
+                for i, element in enumerate(list_cours,start=1):
+                    print( i,element)
             elif choix == "4":
                 list_cours =[]
             elif choix == "5":
