@@ -391,7 +391,67 @@ nav {
 
 @media screen and (max-width: 600px) {
     .section-asymetrique {
-        grid-template: 150px repeat(6);
+        grid-template: 150px repeat(6, auto) 100px / 100%;
+    }
+
+    .ligne-gauche, .ligne-droite {
+        display: none;
+    }
+
+    .section-asymetrique h2 {
+        font-size: 30px;
+    }
+
+    .bloc, .img-grid {
+        grid-area: auto;
+    }
+
+    .img-grid {
+        width: 100%;
+        height: 100%;
+    }
+
+    .bloc-txt-left h3, 
+    .bloc-txt-right h3 {
+        font-size: 25px;
+    }
+
+    .bloc-txt-right {
+        width: 100%;
     }
 
 }
+
+
+/* ---Section Parallax */
+
+.parallax {
+    width: 100%;
+    height: 300px;
+    background-image: url(./ressources/parallax-large-flou.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.parallax p {
+    font-size: 64px;
+    color: #f1f1f1;
+}
+.parallax span {
+    display: block;
+    font-size: 25px;
+    color: #f1f1f1;
+}
+
+@media screen and (max-width: 400px) {
+    .parallax p {
+        font-size: 55px;
+    }
+}
+
+
+
+
