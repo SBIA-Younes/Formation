@@ -453,5 +453,69 @@ nav {
 }
 
 
+/* --- Section Tarifs --- */
+
+.section-tarifs {
+    padding-bottom: 150px;
+    border-bottom: 1px dashed #333;
+}
+.section-tarifs h3 {
+    text-align: center;
+    font-size: 45px;
+    margin: 120px 0px 20px;
+    padding: 0px 30px;
+}
+.section-tarifs hr {
+    width: 200px;
+    margin: 20px auto 100px;
+}
+.container-tarifs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.cartes-tarifs {
+    width: 350px;
+    height: auto;
+    border-radius: 5px;
+    margin: 15px 15px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+.cartes-tarifs:hover {
+    transform: translateY(-5px);
+}
+
+.cartes-tarifs h4 {
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 35px;
+    clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
+    background: #ffafbf;
+}
+.cartes-tarifs span {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.cartes-tarifs:nth-child(2) h4 {
+    background: #ff5073;
+}
+.cartes-tarifs:nth-child(3) h4 {
+    background: #f03;
+}
+.cartes-tarifs p {
+    font-size: 18px;
+    padding: 20px 10px;
+    border-top: 1px solid rgb(194,197,194);
+}
+.cartes-tarifs p:last-of-type {
+    border-bottom: 1px solid rgb(194,197,194);
+
+}
 
 
