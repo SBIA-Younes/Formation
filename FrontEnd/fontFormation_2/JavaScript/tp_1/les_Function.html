@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Les Function</title>
+    </head>
+
+    <body> 
+        <script>
+            (function () {
+                console.log("Je me joue toute seule");
+            })(); //-->cette function c'esxucute toute seule
+
+            const faireUneTache = tache => console.log("je fais : " + tache);
+
+            faireUneTache("Les courses");
+            faireUneTache("Le menage");
+
+            (() => {
+                console.log("Je me Joue encore toute seule");
+            })();
+        </script>
+    </body>
+
+</html>

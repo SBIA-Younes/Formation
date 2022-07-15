@@ -42,7 +42,7 @@ function presntation(){
 }
 // console.log(presntation()); 
 
- 
+
 function presntation(a, b){
 
     console.log("Hello World!");
@@ -121,15 +121,209 @@ for (let i =0; i <5; i++) {
 
 let i = 0;
 while (i < 10) {
-    console.log(i);
+    // console.log(i);
     i++;
 }
 
 do {
-    console.log(i, "tst");
+    // console.log(i, "tst");
     i++;
 }
 while (i < 10);
+
+// les Tableau ps=> {dictionair en python}
+
+let tableau1 = ["a","b","c","d","e","f","g","h","i","j"];
+            // 0/  1/   2/  3/  4/  5/  6/  7/  8/  9/
+
+// console.log(tableau1[3]);
+tableau1.push("ajoute element") // ajoute un element au dernier
+// console.log(tableau1[tableau1.length -1]);
+// console.log(tableau1);
+tableau1.pop(); // enleve le dernier element
+// console.log(tableau1);
+tableau1.shift(); // enleve le premier element
+// console.log(tableau1);
+tableau1.unshift("a"); // ajoute un elemnt au debut 
+// console.log(tableau1);
+// console.log(tableau1.indexOf("e")); // retourn l'index d'un element dans le tableau
+
+tableau1.splice(0,2,"z"); // enlev les les element du 0 index(1er parm) a 2 index(2er parm) et ajoute l'elemnt "z"(3er parm)
+// console.log(tableau1);
+
+// console.log(tableau1.slice(2,4)); // retourn les elemnt depuis(1er parm)=>index jusqu'a (2er parm)=>non compris
+
+const tableau2 = ["k","l","m","n"];
+
+// tableau1 = tableau1 + tableau2;
+
+tableau2[tableau2.length] = "o";
+// console.log(tableau2);
+
+let tableau3 = [];
+// console.log(tableau3);
+
+const numTab = [1,2,3];
+tableau1.forEach(function(i) {
+    // console.log(i);
+    tableau3.unshift(i);
+
+})
+// console.log(tableau3);
+const fruits = ["Fraise","Pomme","Pastèque","Kiwi"];
+const resultFilter = fruits.filter(function(fruit) { 
+    return fruit.length > 4;
+})
+
+// console.log(resultFilter);
+
+
+const str = "Lorem ipsum dolor sit amet, consectet";
+const regex = /[A-Z]/gi;
+// console.log(str.match(regex));
+
+
+// Les Objet
+
+const kitty = {
+    race : "Siamois",
+    poids : 3,
+    couleur : "gris",
+    nvObjet : {
+        abc : "abc",
+        zzz : "zzz",
+        nvnvObjet : {
+            uuu : "uuu",
+            ppp : "ppp"
+        }
+    }
+};
+kitty.age = 13;
+// console.log(kitty);
+
+delete kitty.age;
+
+// console.log(kitty.nvObjet.nvnvObjet.ppp);
+
+
+// for in 
+
+let voiture = {
+    couleur: 'noire',
+    marque: 'peugeot',
+    anneer: 2007
+}
+
+for (let props in voiture) {
+    // console.log(props, voiture[props]);
+}
+
+const dFruit = ["fraise", "cerise", "framboise"];
+
+for (let dFruits of dFruit) {
+    // console.log(dFruit.indexOf(dFruits), dFruits);
+}
+
+
+voiture = {
+    couleur: 'noire',
+    marque: 'peugeot',
+    annee: 2007,
+    myFunction : function (){
+        console.log(this.annee);
+    }
+}
+// voiture.myFunction();
+// console.log(this);
+let nvFunctions = voiture.myFunction.bind(voiture);
+
+// console.log(nvFunctions);
+
+// nvFunctions(); 
+
+const bton = document.querySelector("button");
+
+bton.addEventListener("click", voiture.myFunction.bind(voiture));
+
+// Le spread operator
+
+// const arr = [1,2,3];
+// console.log([...arr,4]);
+
+const presonne = {
+    nom : 'Tom',
+    age : 36
+}
+
+const presentation = {
+    ...presonne,
+    email : 'tom@example'
+}
+
+// console.log(presentation);
+
+// Le rest operator
+
+function arr(...nbs) {
+    console.log(nbs);
+}
+
+// arr(1,2,3,4,5,6,7,8,9,10,11,12)
+
+
+// const tabNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let tableauPairs = [];
+// for (let i = 0; i < tabNumbers.length; i++) {
+//     if (tabNumbers[i] % 2 === 0) {
+//         tableauPairs.push(tabNumbers[i]);
+//     }
+// }
+// console.log(tableauPairs);
+
+
+const tabNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const checkPairs = n => n % 2 === 0;
+// console.log(checkPairs(4));
+
+let nvDate = new Date();
+// console.log(nvDate);
+
+// Les classes
+
+class Voiture {
+    constructor(marque, annee, option) {
+        this.marque = marque;
+        this.annee = annee;
+        this.option = option;
+    }
+
+    rajoutOption(nomOption) {
+        this.option++;
+        console.log(`Rajout de ${nomOption}, nombre d'option : ${this.option}`);
+        return this;
+    }
+
+    dateSortie() {
+        console.log(`Date de sortie de cette voiture ${this.annee}`);
+    }
+}
+
+
+const voiture1 = new Voiture("Toyota", 2013, 0);
+console.log(voiture1);
+
+voiture1.rajoutOption("2 porte")
+
+class Moto extends Voiture {
+    dateSortie() {
+        console.log(`Date de sortie de cette moto ${this.annee}`);
+    }
+};
+
+const moto1 = new Moto("suzuki", 2021, 0);
+console.log(moto1);
+moto1.dateSortie()
+
 
 
 
