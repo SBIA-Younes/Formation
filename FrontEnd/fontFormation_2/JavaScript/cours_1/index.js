@@ -6,7 +6,7 @@
 const questionContainer = document.querySelector(".click-event");
 const btn1 = document.querySelector("#btn-1");
 const btn2 = document.getElementById("btn-2");
-const afficheP = document.querySelector("p");
+const afficheP = document.querySelector(".box p");
 questionContainer.addEventListener("click", () => {
   questionContainer.classList.toggle("question-click");
 });
@@ -14,6 +14,7 @@ questionContainer.addEventListener("click", () => {
 btn1.addEventListener("click", () => {
   afficheP.classList.add("show-afficheP");
   afficheP.style.background = "green";
+  console.log(afficheP);
 });
 btn2.addEventListener("click", () => {
   afficheP.classList.add("show-afficheP");
@@ -122,5 +123,55 @@ boxes.forEach((box) => {
   box.addEventListener("click", (e) => {
     // console.log(e.target);
     // e.target.style.transform = "scale(0.7)";
-  })
+  });
+});
+
+// ----------------------------------------
+// addEventListener Vs onclick
+
+// document.body.onclick = () => {
+//   console.log("click");
+// }
+
+// Bubbling => fin (de base l'eventListener est paramétré en mode Bubbling)
+document.addEventListener(
+  "click",
+  () => {
+    // console.log("click 1 !");
+  },
+  false
+);
+
+// Usecapture => debut (l'eventListener n'est pasparamétré en mode Bubbling alors il faut metre au 3eme parametre true)
+document.addEventListener(
+  "click",
+  () => {
+    // console.log("click 2 !");
+  },
+  true
+);
+
+// ------------------------------------------
+// Stop propagation
+
+questionContainer.addEventListener("click", (e) => {
+  // alert("Test !");
+  // e.stopPropagation();
 })
+
+// -----------------------------------------
+// BOM
+
+// console.log(window.innerWidth);
+
+// window.open("http://google.com/", "cours.js", "height-600, width=800")
+
+btn2.addEventListener("click", () => {
+  confirm("Voulez vous vraiment vous tromper ?")
+})
+
+btn1.addEventListener("click", () => {
+  let answer = prompt("Entrez votre nom !")
+  console.log(answer);
+})
+
