@@ -157,7 +157,7 @@ document.addEventListener(
 questionContainer.addEventListener("click", (e) => {
   // alert("Test !");
   // e.stopPropagation();
-})
+});
 
 // -----------------------------------------
 // BOM
@@ -167,11 +167,10 @@ questionContainer.addEventListener("click", (e) => {
 // window.open("http://google.com/", "cours.js", "height-600, width=800")
 
 btn2.addEventListener("click", () => {
-  confirm("Voulez vous vraiment vous tromper ?")
-})
+  confirm("Voulez vous vraiment vous tromper ?");
+});
 
 btn1.addEventListener("click", () => {
-  let answer = prompt("Entrez votre nom !")
+  let answer = prompt("Entrez votre nom !");
   console.log(answer);
-})
-
+});
