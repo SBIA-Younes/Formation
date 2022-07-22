@@ -1,3 +1,5 @@
-export const MyHeader = ({ color, title }) => (
-  <h1 style={{ color: color }}>{title}</h1>
+const MyHeader = ({ children }) => (
+  <h1 style={{ color: children.color }}>{children.title}</h1>
 );
+
+export default MyHeader;

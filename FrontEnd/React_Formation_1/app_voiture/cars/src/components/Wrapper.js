@@ -1,4 +1,4 @@
-export function wrapper(props) {
+function Wrapper({ children }) {
   return (
     <div
       style={{
@@ -8,7 +8,9 @@ export function wrapper(props) {
         margin: "5px auto",
       }}
     >
-      {props}
+      {children}
     </div>
   );
 }
+
+export default Wrapper;

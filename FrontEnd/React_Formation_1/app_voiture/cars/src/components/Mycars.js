@@ -1,6 +1,6 @@
 import { Component } from "react";
-import { wrapper } from "./Wrapper";
-import { MyHeader } from "./MyHeader";
+import Wrapper from "./Wrapper";
+import MyHeader from "./MyHeader";
 import Car from "./Cars";
 
 export class Mycars extends Component {
@@ -26,10 +26,11 @@ export class Mycars extends Component {
 
     const years = new Date().getFullYear();
 
-    const MyTitle = MyHeader({ color, title });
     return (
       <div>
-        {wrapper(MyTitle)}
+        <Wrapper>
+          <MyHeader>{{ color, title }}</MyHeader>
+        </Wrapper>
 
         <button onClick={this.addTenYears}> + 10 ans</button>
         <Car
