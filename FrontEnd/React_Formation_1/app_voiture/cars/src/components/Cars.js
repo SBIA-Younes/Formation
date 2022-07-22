@@ -1,6 +1,6 @@
 import React from "react";
 
-const Car = ({ children, color }) => {
+const Car = ({ children, color, year }) => {
   const colorInfo = color ? color : "white";
 
   if (children) {
@@ -14,10 +14,12 @@ const Car = ({ children, color }) => {
         }}
       >
         <p>Marque : {children}</p>
+        <p>Age : {year + " ans"}</p>
         <p>Couleur : {colorInfo}</p>
       </div>
     );
-  } else {}
+  } else {
+  }
 };
 
 export default Car;
