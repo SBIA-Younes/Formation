@@ -1,5 +1,3 @@
-import React from "react";
-
 const Car = ({ children, color, year }) => {
   const colorInfo = color ? color : "white";
 
