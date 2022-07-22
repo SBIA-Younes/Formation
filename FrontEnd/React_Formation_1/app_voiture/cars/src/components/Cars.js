@@ -1,22 +1,14 @@
-const Car = ({ children, color, year }) => {
-  const colorInfo = color ? color : "white";
+import { wrapper } from "./Wrapper";
 
+const Car = ({ children, color, year }) => {
   if (children) {
-    return (
-      <div
-        style={{
-          backgroundColor: "pink",
-          width: "400px",
-          padding: "10px",
-          margin: "5px auto",
-        }}
-      >
+    return wrapper(
+      <div>
         <p>Marque : {children}</p>
         <p>Age : {year + " ans"}</p>
-        <p>Couleur : {colorInfo}</p>
+        <p>Couleur : {color ? color : "white"}</p>
       </div>
     );
-  } else {
   }
 };
 

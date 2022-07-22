@@ -1,7 +1,9 @@
 import { Component } from "react";
+import { wrapper } from "./Wrapper";
+import { MyHeader } from "./MyHeader";
 import Car from "./Cars";
 
-class Mycars extends Component {
+export class Mycars extends Component {
   state = {
     voiture: [
       { name: "Ford", color: "red", year: 2000 },
@@ -19,12 +21,17 @@ class Mycars extends Component {
     });
   };
   render() {
+    // console.log(this.props);
+    const { title, color } = this.props;
+
     const years = new Date().getFullYear();
 
+    const MyTitle = MyHeader({ color, title });
     return (
       <div>
-        <h1>{this.props.title}</h1>
-        <button onClick={this.addTenYears}> + 10ans</button>
+        {wrapper(MyTitle)}
+
+        <button onClick={this.addTenYears}> + 10 ans</button>
         <Car
           color={this.state.voiture[0].color}
           year={years - this.state.voiture[0].year}
@@ -47,5 +54,3 @@ class Mycars extends Component {
     );
   }
 }
-
-export default Mycars;
