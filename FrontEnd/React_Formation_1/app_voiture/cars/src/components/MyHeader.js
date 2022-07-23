@@ -1,5 +1,9 @@
-const MyHeader = ({ children }) => (
-  <h1 style={{ color: children.color }}>{children.title}</h1>
+import Wrapper from "./Wrapper";
+
+const MyHeader = ({ myStyle, children }) => (
+  <Wrapper>
+    <h1 style={{ color: myStyle }}>{children}</h1>
+  </Wrapper>
 );
 
 export default MyHeader;

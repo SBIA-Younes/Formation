@@ -1,5 +1,4 @@
 import { Component } from "react";
-import Wrapper from "./Wrapper";
 import MyHeader from "./MyHeader";
 import Car from "./Cars";
 
@@ -28,9 +27,7 @@ export class Mycars extends Component {
 
     return (
       <div>
-        <Wrapper>
-          <MyHeader>{{ color, title }}</MyHeader>
-        </Wrapper>
+        <MyHeader myStyle={color}>{title}</MyHeader>
 
         <button onClick={this.addTenYears}> + 10 ans</button>
         <Car
@@ -51,6 +48,8 @@ export class Mycars extends Component {
         >
           {this.state.voiture[2].name}
         </Car>
+
+        <MyHeader myStyle={color}>Bonjour</MyHeader>
       </div>
     );
   }
