@@ -1,11 +1,16 @@
 // Créer un événement au scroll
 
+console.log(imgImprovise);
 window.addEventListener("scroll", () => {
-  console.log(window.scrollY);
   if (window.scrollY) {
     navbar.style.height = "50px";
   } else if (window.scrollY == 0) {
     navbar.style.height = "90px";
+  } else if (window.scrollY == 200) {
+    console.log(window.scrollY);
+    console.log("scrollY >= 200");
+    imgImprovise.style.opacity = "1";
+    imgImprovise.style.transform = "translateX(0)";
   }
 });
 
