@@ -1,56 +1,46 @@
 import { Component } from "react";
-import MyHeader from "./MyHeader";
 import Car from "./Cars";
 
-export class Mycars extends Component {
+class Mycars extends Component {
   state = {
     voiture: [
-      { name: "Ford", color: "red", year: 2000 },
-      { name: "Mercedes", color: "black", year: 2010 },
-      { name: "Peugeot", color: "green", year: 2018 },
+      { name: "Ford", year: "2000", color: "red" },
+      { name: "Mercedes", year: "2010", color: "black" },
+      { name: "Peugeot", year: "2018", color: "green" },
     ],
+    title: "Mon Catalogue Voiture 2",
   };
+
   addTenYears = () => {
     const updatedState = this.state.voiture.map((param) => {
       return (param.year -= 10);
     });
-
     this.setState({
       updatedState,
     });
   };
-  render() {
-    // console.log(this.props);
-    const { title, color } = this.props;
 
+  render() {
     const years = new Date().getFullYear();
 
     return (
       <div>
-        <MyHeader myStyle={color}>{title}</MyHeader>
+        <h1>{this.state.title}</h1>
 
         <button onClick={this.addTenYears}> + 10 ans</button>
-        <Car
-          color={this.state.voiture[0].color}
-          year={years - this.state.voiture[0].year}
-        >
-          {this.state.voiture[0].name}
-        </Car>
-        <Car
-          color={this.state.voiture[1].color}
-          year={years - this.state.voiture[1].year}
-        >
-          {this.state.voiture[1].name}
-        </Car>
-        <Car
-          color={this.state.voiture[2].color}
-          year={years - this.state.voiture[2].year}
-        >
-          {this.state.voiture[2].name}
-        </Car>
 
-        <MyHeader myStyle={color}>Bonjour</MyHeader>
+        {this.state.voiture.map(({ name, year, color }, index) => {
+          return (
+            <div key={index}>
+              <Car year={years - year + " ans"} color={color}>
+                {name}
+              </Car>
+            </div>
+          );
+        })}
       </div>
     );
   }
 }
+
+export default Mycars;
