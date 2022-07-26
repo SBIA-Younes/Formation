@@ -3,7 +3,7 @@
 \*-----------------------------------*/
 
 /**
-* copyright 2022 
+* copyright 2022 Younes Sbia num : 8180
 */
 
 /*-----------------------------------*\
@@ -44,17 +44,17 @@
 
   --fs-4: 3rem;
 
-  --fs-5: 2.2r em;
+  --fs-5: 2.2rem;
 
   --fs-6: 2rem;
 
-  --fs-7: 1.8r em;
+  --fs-7: 1.8rem;
 
   --fs-8: 1.5rem;
 
   --fs-9: 1.4rem;
 
-  --fs-10: 1.2re m;
+  --fs-10: 1.2rem;
 
   --fw-500: 500;
   --fw-600: 600;
@@ -144,12 +144,10 @@ html {
 }
 
 body {
-  background-color: var(--white);
   color: var(--onyx);
   font-size: 1.6rem;
   line-height: 1.7;
-
-  height: 300vh;
+  background-color: var(--alice-blue);
 }
 
 :focus-visible {
@@ -178,6 +176,36 @@ body {
 
 .container {
   padding-inline: 15px;
+}
+
+.section {
+  padding-block: var(--section-padding);
+}
+
+.h1,
+.h2,
+.h3 {
+  font-family: var(--ff-oswald);
+  line-height: 1.2;
+  font-weight: var(--fa-600);
+}
+
+.h1 {
+  font-size: var(--fs-3);
+  text-transform: uppercase;
+}
+
+.h2,
+.h3 {
+  color: var(--prussian-blue);
+}
+
+.h2 {
+  font-size: var(--fs-4);
+}
+
+.h3 {
+  font-size: var(--fs-5);
 }
 
 /*-----------------------------------*\
@@ -296,4 +324,77 @@ body {
 .overlay.active {
   visibility: visible;
   opacity: 1;
+}
+
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  padding-block-start: calc(var(--section-padding) + 85px);
+  z-index: 1;
+}
+
+.hero-container {
+  background-color: var(--black_60);
+  color: var(--white);
+  text-align: center;
+  padding: 30px;
+}
+
+.hero-title .span {
+  color: var(--dark-orange);
+  font-size: var(--fs-2);
+  font-weight: var(--fa-700);
+}
+
+.hero-text {
+  margin-bottom: 20px 30px;
+}
+
+.btn-outline {
+  max-width: max-content;
+  margin-inline: auto;
+  font-size: var(--fs-9);
+  font-weight: var(--fa-500);
+  text-transform: uppercase;
+  border: 1px solid var(--white);
+  padding: 8px 20px;
+  transition: var(--transition);
+}
+
+.btn-outline:is(:hover, :focus) {
+  background-color: var(--dark-orange);
+  border-color: var(--dark-orange);
+}
+
+.hero-shape {
+  position: absolute;
+  z-index: -1;
+  animation: move 2s ease-in-out infinite alternate;
+}
+
+.hero .shape-1 {
+  top: 100px;
+  left: 30px;
+}
+.hero .shape-2 {
+  bottom: 80px;
+  right: 30px;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
 }
