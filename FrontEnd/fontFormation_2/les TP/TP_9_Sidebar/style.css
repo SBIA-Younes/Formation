@@ -21,7 +21,7 @@ h1 {
 p {
   padding: 30px 50px;
 }
-#side-bar {
+#side_bar {
   position: absolute;
   width: 230px;
   height: 100%;
@@ -30,6 +30,9 @@ p {
   left: -230px;
   transition: 0.5s ease-out;
   z-index: 4;
+}
+#side_bar.active {
+  left: 0;
 }
 .toggle-btn {
   position: absolute;
@@ -58,4 +61,18 @@ li {
 li:hover {
   background: #292929;
   color: #fcfcfb;
+}
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(30, 28, 28, 0.574);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+
+#overlay.active {
+  visibility: visible;
+  opacity: 1;
 }
