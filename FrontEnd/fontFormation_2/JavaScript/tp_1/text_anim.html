@@ -58,8 +58,48 @@
 
     <script>
 
-      
+      const target = document.getElementById("target");
+      let array = ["dévloppeur", "photographe", "créatif"];
+      let wordIndex = 0;
+      let letterIndex = 0;
 
+      const createLetter = function () {
+        const letter = document.createElement("span");
+        target.appendChild(letter);
+        letter.textContent = array[wordIndex][letterIndex];
+
+        setTimeout(function () {
+          letter.remove();
+        }, 2000)
+
+      }
+
+      /*
+      setInterval(() => {
+        letterIndex++;
+        // createLetter();
+      })*/
+
+      const loop = () => {
+        setTimeout(() => {
+          if (wordIndex >= array.length) {
+            wordIndex = 0;
+            letterIndex = 0;
+            loop();
+          } else if (letterIndex < array[wordIndex].length) {
+              createLetter();
+              letterIndex++;
+              loop();
+            } else {
+              wordIndex++;
+              letterIndex = 0;
+              setTimeout(() => {
+                loop();
+              }, 2000);
+            }
+        }, 70)
+      }
+      loop();
     </script>
   </body>
 
