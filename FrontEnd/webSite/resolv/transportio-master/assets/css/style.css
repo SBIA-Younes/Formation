@@ -276,6 +276,30 @@ body {
   width: 40px;
 }
 
+.gird-list {
+  display: grid;
+  gap: 30px;
+}
+
+.btn-link {
+  color: var(--dark-orange);
+  font-size: var(--fs-7);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.btn-link > * {
+  transform: translateX(-22px);
+  transition: var(--transition);
+}
+
+.btn-link:is(:hover, :focus) > * {
+  transform: translateX(0);
+}
+
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -516,3 +540,51 @@ body {
 .about-item:not(:last-child) {
   margin-block-end: 10px;
 }
+
+/*-----------------------------------*\
+  #SERVICE
+\*-----------------------------------*/
+
+.service {
+  background-color: var(--alice-blue);
+}
+
+.service:is(.section-subtitle, .section-title, .section-text) {
+  text-align: center;
+}
+
+.service .section-title {
+  margin: block end 20px;
+}
+
+.service .section-text {
+  margin-block-end: 50px;
+}
+
+.service-card {
+  background-color: var(--white);
+  padding: 30px;
+  border: 20px solid var(--cultured-3);
+  transition: var(--transition);
+}
+
+.service-card:is(:hover, :focus-within) {
+  border-color: var(--dark-orange);
+}
+
+.service-card .card-icon {
+  margin-block-end: 30px;
+}
+
+.service-card .card-title .span {
+  display: inline;
+  color: var(--dark-orange);
+  font-size: var(--fs-3);
+  margin-inline-end: 15px;
+}
+
+.service-card .card-text {
+  margin-block: 10px 20px;
+}
+
+
