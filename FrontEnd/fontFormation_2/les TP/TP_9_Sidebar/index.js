@@ -7,6 +7,7 @@ const navLinks = document.querySelectorAll("[data-nav-link]");
 for (let i = 0; i < navbarToggle.length; i++) {
   navbarToggle[i].addEventListener("click", () => {
     side_bar.classList.toggle("active");
+    btn.classList.toggle("active");
     overlay.classList.toggle("active");
   });
 }
@@ -14,6 +15,7 @@ for (let i = 0; i < navbarToggle.length; i++) {
 for (let i = 0; i < navLinks.length; i++) {
   navLinks[i].addEventListener("click", () => {
     side_bar.classList.toggle("active");
+    btn.classList.toggle("active");
     overlay.classList.toggle("active");
   });
 }

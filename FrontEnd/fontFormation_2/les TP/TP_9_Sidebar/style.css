@@ -43,14 +43,40 @@ p {
   width: 50px;
 }
 .toggle-btn span {
-  width: 60px;
-  height: 10px;
+  position: absolute;
+  width: 100%;
+  height: 6px;
   border-radius: 5px;
   background: #09fbba;
-  display: block;
-  margin-top: 4px;
-  transition: 0.3s ease;
+  transition: all 0.6s ease-in-out;
 }
+#btn > span:nth-child(1) {
+  top: 0;
+}
+#btn > span:nth-child(2) {
+  top: 18px;
+}
+#btn > span:nth-child(3) {
+  top: 36px;
+}
+.toggle-btn span.active {
+  position: absolute;
+}
+
+#btn.active > span:nth-child(1) {
+  top: 18px;
+  transform: rotate(135deg);
+}
+#btn.active > span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20);
+  visibility: hidden;
+}
+#btn.active > span:nth-child(3) {
+  top: 18px;
+  transform: rotate(-135deg);
+}
+
 li {
   color: #292929;
   list-style: none;
