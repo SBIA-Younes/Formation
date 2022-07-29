@@ -29,3 +29,7 @@ window.addEventListener("scroll", () => {
     popup.style.visibility = "hidden";
   });
 });
+
+const parallax = document.getElementById("parallax")
+
+
