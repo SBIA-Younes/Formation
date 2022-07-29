@@ -95,8 +95,33 @@ document.addEventListener("click", (e) => {
       document.body.style.background = "blue";
       break;
     default:
-      null
+      null;
       // document.body.style.background = "green";
       break;
   }
 });
+
+// ----------------------------
+//  Méthodes Arrays
+// ----------------------------
+
+let array3 = ["Javascript", "Php", "Python"];
+let array4 = ["Ruby", "Solidity"];
+
+let newArray = array3.concat(array4);
+
+// console.log(newArray);
+
+let newArray1 = [...array3, ...array4];
+
+// console.log(newArray1);
+
+// console.log(array3.join(" "));
+
+// Important //
+
+let arrayNumber = [4, 5, 6, 9, 10];
+
+// console.log(arrayNumber.reduce((x,y) => x + y));
+arrayNumber.unshift(17)
+// console.log(arrayNumber);
