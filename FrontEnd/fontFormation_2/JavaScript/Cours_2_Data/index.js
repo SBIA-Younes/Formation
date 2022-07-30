@@ -123,5 +123,34 @@ let newArray1 = [...array3, ...array4];
 let arrayNumber = [4, 5, 6, 9, 10];
 
 // console.log(arrayNumber.reduce((x,y) => x + y));
-arrayNumber.unshift(17)
+arrayNumber.unshift(17);
 // console.log(arrayNumber);
+/* 
+data.map((user) => {
+  // user.age.sort((a,b) => a-b);
+  document.body.innerHTML += `
+<div class='item'>
+  
+    <h2 > nom : ${user.pseudo} </h2>
+    <p > age ${user.age} ans</p>
+    <p > les skills  : ${user.technos.join(' - ')} </p>
+    <p > Status  : ${user.admin ? "Modéreteur" : " Mombre"} </p>
+</div>
+`;
+});
+ */
+/* 
+document.body.innerHTML = data
+.filter((user) => user.admin == false)
+// .filter((user) => user.pseudo.includes('Den'))
+.sort((a, b) => a.age - b.age)
+.map((user) => 
+`
+<div class='item'>
+  
+    <h2 > nom : ${user.pseudo} </h2>
+    <p > age ${user.age} ans</p>
+    <p > les skills  : ${user.technos.join(' - ')} </p>
+    <p > Status  : ${user.admin ? "Modéreteur" : " Mombre"} </p>
+</div>`
+) */
