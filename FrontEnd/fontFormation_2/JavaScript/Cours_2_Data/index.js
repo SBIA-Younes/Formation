@@ -154,3 +154,20 @@ document.body.innerHTML = data
     <p > Status  : ${user.admin ? "Modéreteur" : " Mombre"} </p>
 </div>`
 ) */
+
+// ----------------------------
+//  Les date
+// ----------------------------
+
+let date = new Date();
+
+function dataParser(chaine) {
+  let newDate = new Date(chaine).toLocaleDateString("fr-FR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  return newDate;
+}
+
+console.log(dataParser(date));
