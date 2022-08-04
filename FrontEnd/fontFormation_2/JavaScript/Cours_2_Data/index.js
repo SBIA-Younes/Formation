@@ -161,6 +161,9 @@ document.body.innerHTML = data
 
 let date = new Date();
 
+let iso = date.toISOString();
+// console.log(iso);
+
 function dataParser(chaine) {
   let newDate = new Date(chaine).toLocaleDateString("fr-FR", {
     year: "numeric",
@@ -170,4 +173,28 @@ function dataParser(chaine) {
   return newDate;
 }
 
-console.log(dataParser(date));
+// console.log(dataParser(date));
+
+// Destructuring
+
+let moreData = {
+  destVar: ["Element 1", "Element 2"],
+};
+
+const { destVar } = moreData;
+
+// console.log(moreData.destVar[0]);
+// console.log(destVar[0]);
+
+let array5 = [70, 80, 90]
+let [a,z,e] = array5;
+
+// console.log(a,z,e);
+
+const dateDestructuring = (chaine) => {
+  let newDate = chaine.split("T")[0]
+  let [y,m,d] = newDate.split("-")
+  return [d,m,y].join("/")
+}
+
+console.log(dateDestructuring(iso));

@@ -7,7 +7,7 @@ class Mycars extends Component {
     voiture: [
       { name: "Ford", year: "2000", color: "red" },
       { name: "Mercedes", year: "2010", color: "black" },
-      { name: "Peugeot", year: "2018", color: "green" },
+      { name: "Peugeot", year: "2022", color: "green" },
     ],
     title: "Mon Catalogue Voiture 2",
   };
@@ -35,7 +35,18 @@ class Mycars extends Component {
         {this.state.voiture.map(({ name, year, color }, index) => {
           return (
             <div key={index}>
-              <Car year={years - year + " ans"} color={color}>
+              <Car
+                year={() => {
+                  let age = years - year;
+
+                  if (age >= 1) {
+                    age + "ans";
+                  } else {
+                    age + "an";
+                  }
+                }}
+                color={color}
+              >
                 {name}
               </Car>
             </div>

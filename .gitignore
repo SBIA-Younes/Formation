@@ -8,3 +8,5 @@ FrontEnd/fontFormation_2/les TP/TP_8_scroll_popup/.vscode
 .vscode
 FrontEnd/webSite/src
 FrontEnd/webSite/resolv/dentelo-master
+.gitignore
+Backend/Django/formation_watsapp/.env_3.10_formation_watsap
