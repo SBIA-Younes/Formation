@@ -31,7 +31,13 @@ const pseudoChecker = (value) => {
   }
 };
 const emailChecker = (value) => {
-  console.log(value);
+  if (!value.match(/^[\w_-]+@[\w-]+\.[a-z]{2,4}$/i)) {
+    errorDisplay("email", "Le mail n'est pas valide");
+    email = null;
+  } else {
+    errorDisplay("email", "", true);
+    email = value;
+  }
 };
 
 const passwordChecker = (value) => {
