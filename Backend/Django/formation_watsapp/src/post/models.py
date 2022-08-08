@@ -7,7 +7,7 @@ class Post_App(models.Model):
 
     name = models.CharField(max_length=50)
     content = models.TextField(max_length=100)
-    # imgae = models.ImageField(upload_to="post/templates/static/image/")
+    imgae = models.ImageField(upload_to="post/templates/static/image/")
 
     def __str__(self):
         return self.name
