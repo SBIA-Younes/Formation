@@ -16,6 +16,18 @@ def all_posts(request):
 def single_post(request, id):
     post = Post.objects.get(id=id)
     context = {
-      "single_post": post
+        "single_post": post
     }
     return render(request, "single.html", context)
+
+
+def new_post(request):
+    pass
+
+
+def delete_post(request, id):
+    pass
+
+
+def edit_post(request, id):
+    pass
