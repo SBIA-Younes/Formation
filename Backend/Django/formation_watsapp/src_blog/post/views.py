@@ -3,6 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 
 from .models import Post
+from .forms import PostForm
 
 
 def all_posts(request):
@@ -22,12 +23,30 @@ def single_post(request, id):
 
 
 def new_post(request):
-    pass
 
-
-def delete_post(request, id):
-    pass
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = PostForm()
+        # context = {'form': form}
+    return render(request, "new.html", {'form': form})
 
 
 def edit_post(request, id):
-    pass
+    post = Post.objects.get(id=id)
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = PostForm(instance=post)
+    return render(request, "edit.html", {'form': form})
+
+
+def delete_post(request, id):
+    post = Post.objects.get(id=id)
+    post.delete()
+    return redirect('/blog/')
+
