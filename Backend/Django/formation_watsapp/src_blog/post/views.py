@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
@@ -27,17 +27,18 @@ def new_post(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
-            form.save()
+            myForms = form.save(commit=False)
+            myForms.author = request.user
+            myForms.save()
     else:
         form = PostForm()
-        # context = {'form': form}
     return render(request, "new.html", {'form': form})
 
 
 def edit_post(request, id):
     post = Post.objects.get(id=id)
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
     else:
@@ -49,4 +50,3 @@ def delete_post(request, id):
     post = Post.objects.get(id=id)
     post.delete()
     return redirect('/blog/')
-

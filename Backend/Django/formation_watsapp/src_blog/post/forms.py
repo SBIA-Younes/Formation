@@ -8,4 +8,4 @@ class PostForm(forms.ModelForm):
     """Meta definition for Postform."""
 
     model = Post
-    fields = ('title', "content")
+    fields = ['title', "content"]
