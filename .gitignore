@@ -10,3 +10,5 @@ FrontEnd/webSite/src
 FrontEnd/webSite/resolv/dentelo-master
 .gitignore
 Backend/Django/formation_watsapp/.env_3.10_formation_watsap
+
+.env
