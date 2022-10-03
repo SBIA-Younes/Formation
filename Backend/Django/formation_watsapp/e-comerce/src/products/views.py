@@ -4,6 +4,12 @@ from django.views.generic import ListView, DetailView
 from .models import Product, ProductImages, Brand, Category
 from django.db.models import Count
 
+
+
+def post_list(request):
+    
+    objects = Product.objects.all()
+    return render(request, 'products/test_list.html', {'products': objects})
 class ProductList(ListView):
     model = Product
     paginate_by = 10
