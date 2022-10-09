@@ -24,6 +24,7 @@ class Product(models.Model):
     category = models.ForeignKey("Category", verbose_name=_("Category"), related_name="product_category", on_delete=models.SET_NULL, blank=True, null=True)
     brand = models.ForeignKey("Brand", verbose_name=_("Brand"), related_name="product_brand", on_delete=models.SET_NULL, blank=True, null=True)
     video_url = models.URLField(null=True, blank=True, verbose_name=_("Video"))
+    quantity = models.IntegerField(default=50)
     
 
     def __str__(self):
