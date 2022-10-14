@@ -2,7 +2,9 @@ from itertools import product
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Product, ProductImages, Brand, Category
-from django.db.models import Count, Q, F
+from django.db.models import Count, Q, F, Value
+from django.db.models.functions import Concat
+from django.db.models.aggregates import Min, Max, Sum, Avg, Count
 
 
 
@@ -50,8 +52,20 @@ def post_list(request):
     # objects = Product.objects.values_list('id', 'name','category__name')
     # objects = Product.objects.only('id', 'name')
     # objects = Product.objects.select_related('category').all()   #one-to-one relationship , foreignkey
-    objects = Product.objects.prefetch_related('category').all()   #one-to-many relationship , foreignkey
-    objects = Product.objects.annotate   
+    # objects = Product.objects.prefetch_related('category').all()   #one-to-many relationship , foreignkey
+    # objects = Product.objects.annotate(is_new=Value(True))
+    '''  objects = Product.objects.annotate(
+        full_name = Concat("name", Value(' '),"flag")
+    ) '''
+    # objects = Product.objects.aggregate(Count("id"))
+    # objects = Product.objects.aggregate(Sum("price"))
+    # objects = Product.objects.aggregate(Sum("price"), Max("price"))
+    # objects = Product.objects.price_greater_than(40)
+    objects = Product.objects.price_range(40, 60)
+    
+    print(objects)
+    
+    
     return render(request, 'products/test_list.html', {'products': objects})
 class ProductList(ListView):
     model = Product

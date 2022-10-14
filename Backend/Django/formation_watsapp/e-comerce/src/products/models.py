@@ -1,8 +1,20 @@
+from itertools import product
 from django.db import models
 from django.utils.translation import gettext as _
 from django.utils import timezone
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
+from django.db.models.aggregates import Avg
+
+
+
+
+class ProductManager(models.Manager):
+    def price_greater_than(self, price):
+        return self.filter(price__gt=price)
+    
+    def price_range(self, start,end):
+        return self.filter(price__range=(start,end))
 
 
 class Product(models.Model):
@@ -12,6 +24,8 @@ class Product(models.Model):
         ("Feature","Feature"),
         ("Sale", "Sale")
     )
+
+    # thin views , fat models
 
     name = models.CharField(_("Name"), max_length=100)
     sku = models.IntegerField(_("sku"))
@@ -26,11 +40,25 @@ class Product(models.Model):
     video_url = models.URLField(null=True, blank=True, verbose_name=_("Video"))
     quantity = models.IntegerField(default=50)
     
+    objects = ProductManager()
+
 
     def __str__(self):
         return self.name
+    
+    def get_avg(self):
+        avg = self.product_review.aggregate(myavg=Avg( "rate"))
+        return avg 
 
+    def get_avg2(self):
+        rate_sum = 0
+        product_review = self.product_review.all()
+        for review in product_review:
+            rate_sum += review.rate
+            
+        avg = rate_sum / len(product_review)
 
+        return avg
 class ProductImages(models.Model):
 
     product = models.ForeignKey(Product,verbose_name=_("Product"), related_name="product_images", on_delete=models.CASCADE)
