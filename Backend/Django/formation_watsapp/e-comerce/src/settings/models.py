@@ -16,8 +16,8 @@ class Company(models.Model):
     email = models.TextField(_('Email'), max_length=200)
     call_us = models.TextField(_('Call us'), max_length=25)
     email_us = models.EmailField(_('Email us'))
-                                 
-                                 
+    
+    
     class Meta:
         verbose_name = _("Company")
         verbose_name_plural = _("Companys")

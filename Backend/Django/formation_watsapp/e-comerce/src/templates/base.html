@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -44,14 +45,15 @@
 
         <!-- CUSTOM -->
         <link rel="stylesheet" href="{% static 'css/main.css' %}">
-        
+
         
         {% block mystatic %}
-        <link rel="stylesheet" href="{% static 'css/index.css' %}">
-        
+            <link rel="stylesheet" href="{% static 'css/index.css' %}">
         {% endblock mystatic %}
             
 
+        
+        
         <!--=====================================
                     CSS LINK PART END
         =======================================-->
@@ -115,17 +117,33 @@
                 <div class="header-content">
                     <div class="header-media-group">
                         <button class="header-user"><img src="images/user.png" alt="user"></button>
-                        <a href="index.html"><img src=" {{info.logo.url}} " alt="logo"></a>
+                        <a href="index.html"><img src="{{info.logo.url}}" alt="logo"></a>
                         <button class="header-src"><i class="fas fa-search"></i></button>
                     </div>
 
                     <a href="index.html" class="header-logo">
                         <img src="{{info.logo.url}}" alt="logo">
                     </a>
-                    <a href="login.html" class="header-widget" title="My Account">
-                        <img src="images/user.png" alt="user">
+
+                    {% if user.is_authenticated %}
+
+                    <a href="" class="header-widget" title="My Account">
+                        {% if user_profile.image %}
+                            <img src="{{user_profile.image.url}}" alt="user">
+                        {% else %}
+                            <img src="{% static 'images/default.png' %}" alt="user">
+                        {% endif %}
+                        
                         <span>join</span>
                     </a>
+                    {% else %}
+                    <a href="{% url 'login' %}" class="header-widget" title="My Account">
+                        <span>Login</span>
+                    </a>
+                    <a href="}" class="header-widget" title="My Account">
+                        <span>Signup</span>
+                    </a>
+                    {% endif %}
 
                     <form class="header-form">
                         <input type="text" placeholder="Search anything...">
@@ -164,9 +182,9 @@
                     <div class="col-lg-12">
                         <div class="navbar-content">
                             <ul class="navbar-list">
+
                                 <li class="navbar-item dropdown-megamenu">
-                                    <a class="navbar-link" href=" {% url 'products:product_list' %}">products</a>
-                                    
+                                    <a class="navbar-link" href="{% url 'products:product_list' %}">Products</a>
                                 </li>
                                 <li class="navbar-item dropdown-megamenu">
                                     <a class="navbar-link dropdown-arrow" href="#">category</a>
@@ -298,20 +316,18 @@
                                     </div>
                                 </li>
                                 <li class="navbar-item dropdown">
-                                    <a class="navbar-link" href=" {% url 'products:brand_list' %} ">brands</a>
-                                    
+                                    <a class="navbar-link " href="{% url 'products:brand_list' %}">Brands</a>
                                 </li>
                                 <li class="navbar-item dropdown">
-                                    <a class="navbar-link" href="#">ordes</a>
+                                    <a class="navbar-link" href="#">Orders</a>
                                 </li>
-                                
                             </ul>
                             <div class="navbar-info-group">
                                 <div class="navbar-info">
                                     <i class="icofont-ui-touch-phone"></i>
                                     <p>
                                         <small>call us</small>
-                                        <span> {{info.call_us}} </span>
+                                        <span>{{info.call_us}}</span>
                                     </p>
                                 </div>
                                 <div class="navbar-info">
@@ -896,6 +912,7 @@
             {% endblock body %}
                 
 
+
         <!--=====================================
                     INTRO PART START
         =======================================-->
@@ -965,9 +982,9 @@
                             <a class="footer-logo" href="#">
                                 <img src="{{info.logo.url}}" alt="logo">
                             </a>
-                            <p class="footer-desc">Adipisci asperiores ipsum ipsa repellat consequatur repudiandae quisquam assumenda dolor perspiciatis sit ipsum dolor amet.</p>
+                            <p class="footer-desc">{{info.subtitle}}</p>
                             <ul class="footer-social">
-                                <li><a class="icofont-facebook" href="#"></a></li>
+                                <li><a class="icofont-facebook" href="{{info.fb_link}}"></a></li>
                                 <li><a class="icofont-twitter" href="#"></a></li>
                                 <li><a class="icofont-linkedin" href="#"></a></li>
                                 <li><a class="icofont-instagram" href="#"></a></li>
@@ -982,20 +999,20 @@
                                 <li>
                                     <i class="icofont-ui-email"></i>
                                     <p>
-                                        <span>support@greeny.com</span>
-                                        <span>carrer@greeny.com</span>
+                                        <span>{{info.email}}</span>
+                                        
                                     </p>
                                 </li>
                                 <li>
                                     <i class="icofont-ui-touch-phone"></i>
                                     <p>
-                                        <span>+120 279 532 13</span>
-                                        <span>+120 279 532 14</span>
+                                        <span>{{info.phone_number}}</span>
+                                        
                                     </p>
                                 </li>
                                 <li>
                                     <i class="icofont-location-pin"></i>
-                                    <p>1Hd- 50, 010 Avenue, NY 90001 United States</p>
+                                    <p>{{info.address}}</p>
                                 </li>
                             </ul>
                         </div>
@@ -1076,7 +1093,6 @@
         =======================================-->
     </body>
 </html>
-
 
 
 
