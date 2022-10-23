@@ -3,23 +3,9 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import generics
-from .models import Product
-from .serializers import ProductSerializer
+from .models import Brand, Category, Product
+from .serializers import ProductSerializer, CategoryListSerializer, CategoryDetailSerializer,BrandListSerializer, BrandDetailSerializer
 
-
-@api_view(["GET"])
-def product_list_api(request):
-  objects = Product.objects.all()
-  data = ProductSerializer(objects, many=True).data
-  return Response({"status":200, "all products":data})
-
-
-
-@api_view(["GET"])
-def product_detail_api(request, id):
-  objects = Product.objects.get(id=id)
-  data = ProductSerializer(objects).data
-  return Response({"status":200,"product detail":data})
 
 
 class ProductListAPI(generics.ListCreateAPIView):
@@ -29,3 +15,25 @@ class ProductListAPI(generics.ListCreateAPIView):
 class ProductDetailAPI(generics.RetrieveUpdateDestroyAPIView):
   queryset = Product.objects.all()
   serializer_class = ProductSerializer
+  
+  
+  
+  
+  
+class CategorylistAPI(generics.ListAPIView):
+  serializer_class = CategoryListSerializer
+  queryset = Category.objects.all()
+  
+class CategoryDetailAPI(generics.RetrieveAPIView):
+  queryset = Category.objects.all()
+  serializer_class = CategoryDetailSerializer
+  
+  
+  
+class BrandlistAPI(generics.ListAPIView):
+  serializer_class = BrandListSerializer
+  queryset = Brand.objects.all()
+  
+class BrandDetailAPI(generics.RetrieveAPIView):
+  queryset = Brand.objects.all()
+  serializer_class = BrandDetailSerializer
