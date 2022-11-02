@@ -1,3 +1,4 @@
+from dataclasses import fields
 from rest_framework import serializers
 from .models import Product, Category, Brand
 
@@ -6,6 +7,7 @@ from .models import Product, Category, Brand
 class ProductSerializer(serializers.ModelSerializer):
   class Meta:
     model  = Product
+    # fields = ['id', 'name',  "sku", "subtitle", "desc",'flag', "price", "image", "quantity", "video_url",'brand', 'category']
     fields = "__all__"
 
 
